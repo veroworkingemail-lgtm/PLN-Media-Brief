@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media & Social Media Brief — PLN 23 April 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1F8A9E;
+  --primary-dark: #176F80;
+  --soft: #E6F4F7;
+  --bg: #F4F7FA;
+  --card: #FFFFFF;
+  --border: #E5EAF0;
+  --text: #1F2A37;
+  --sub: #6B7280;
+  --gold: #D97706;
+  --gold-soft: #FEF3C7;
+  --red: #DC2626;
+  --red-soft: #FEE2E2;
+  --green: #059669;
+  --green-soft: #D1FAE5;
+  --purple: #7C3AED;
+  --purple-soft: #EDE9FE;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+.container { max-width: 1100px; margin: auto; padding: 0 24px; }
+.header { background: linear-gradient(135deg, #176F80 0%, #1F8A9E 50%, #2FB3C6 100%); color: white; padding: 40px 0 36px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.header-left h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -0.5px; }
+.header-left .subtitle { font-size: 13px; opacity: 0.85; margin-top: 6px; font-weight: 400; }
+.header-badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 12px 20px; text-align: center; flex-shrink: 0; }
+.header-badge .day { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 34px; font-weight: 800; line-height: 1; }
+.header-badge .monthyr { font-size: 11px; opacity: 0.8; letter-spacing: 1px; text-transform: uppercase; }
+.section { margin-top: 36px; }
+.section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+.section-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.icon-teal   { background: var(--soft); }
+.icon-gold   { background: var(--gold-soft); }
+.icon-red    { background: var(--red-soft); }
+.icon-purple { background: var(--purple-soft); }
+.section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); }
+.section-count { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--sub); background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: box-shadow 0.2s, border-color 0.2s; }
+.card:hover { box-shadow: 0 6px 20px rgba(31,138,158,0.10); border-color: rgba(31,138,158,0.3); }
+.num-row { font-size: 10px; font-weight: 600; color: var(--primary); margin-bottom: 6px; letter-spacing: 0.5px; }
+.tag { font-size: 10px; font-weight: 600; color: var(--primary); background: var(--soft); padding: 3px 9px; border-radius: 6px; display: inline-block; margin-bottom: 9px; letter-spacing: 0.5px; }
+.tag-instagram { color: #C026D3; background: #FAE8FF; }
+.tag-tiktok    { color: #0891B2; background: #CFFAFE; }
+.tag-twitter   { color: #1D4ED8; background: #DBEAFE; }
+.tag-facebook  { color: #1877F2; background: #EFF6FF; }
+.tag-red       { color: var(--red); background: var(--red-soft); }
+.card-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 10px; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.card-title a:hover { color: var(--primary); }
+.summary { font-size: 12.5px; color: var(--sub); line-height: 1.70; }
+.takeaway-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; margin-bottom: 12px; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: box-shadow 0.2s, border-color 0.2s; }
+.takeaway-card:hover { box-shadow: 0 6px 20px rgba(217,119,6,0.10); border-color: rgba(217,119,6,0.25); }
+.takeaway-num { width: 44px; height: 44px; background: linear-gradient(135deg, #D97706, #F59E0B); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; color: white; flex-shrink: 0; box-shadow: 0 3px 10px rgba(217,119,6,0.25); }
+.takeaway-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 7px; line-height: 1.4; }
+.takeaway-body { font-size: 12.5px; color: var(--sub); line-height: 1.72; }
+.bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.trends-card, .viral-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.trend-item { display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.trend-item:last-child { border-bottom: none; }
+.trend-rank { font-size: 11px; font-weight: 700; color: var(--primary); width: 22px; text-align: center; flex-shrink: 0; }
+.trend-inner { flex: 1; }
+.trend-keyword { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 5px; text-transform: capitalize; }
+.trend-bar-bg { height: 5px; background: var(--bg); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+.trend-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--primary), #2FB3C6); }
+.trend-volume { font-size: 11px; font-weight: 700; color: var(--primary); white-space: nowrap; flex-shrink: 0; }
+.viral-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.viral-item:last-child { border-bottom: none; }
+.viral-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 5px; line-height: 1.4; }
+.viral-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.viral-title a:hover { color: var(--red); }
+.viral-desc { font-size: 12px; color: var(--sub); line-height: 1.65; }
+.footer { margin-top: 48px; padding: 20px 0 32px; border-top: 2px solid var(--border); text-align: center; font-size: 12px; color: var(--sub); }
+.footer span { color: var(--primary); font-weight: 600; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .bottom-row { grid-template-columns: 1fr; } .header-badge { display: none; } }
+@media print { body { background: white; } .card, .takeaway-card { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="header-left">
+        <h1>Media &amp; Social Media Brief</h1>
+        <div class="subtitle">PT PLN (Persero) &nbsp;·&nbsp; Kamis, 23 April 2026</div>
+      </div>
+      <div class="header-badge">
+        <div class="day">23</div>
+        <div class="monthyr">April 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ═══════════════ MEDIA MASSA ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-teal">📰</div>
+      <div class="section-title">Media Massa</div>
+      <div class="section-count">10 Berita</div>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="num-row">01</div>
+        <div class="tag">Ekonomi · Tempo</div>
+        <div class="card-title"><a href="https://www.tempo.co/ekonomi/tinjauan-teknis-aksesi-indonesia-dengan-oecd-berlanjut-juli-2130924" target="_blank">Tinjauan Teknis Aksesi Indonesia dengan OECD Berlanjut Juli</a></div>
+        <div class="summary">Menteri Koordinator Perekonomian, Airlangga Hartarto menyatakan proses aksesi Indonesia ke Organisation for Economic Co-operation and Development (OECD) berlanjut dengan tinjauan teknis pada Juli 2026. Ia menilai keanggotaan OECD dapat memperkuat perdagangan dan investasi di tengah ketidakpastian global. Dalam 1,5 tahun, Indonesia telah menandatangani 27 perjanjian dagang lintas kawasan. Proses aksesi mencakup sektor lingkungan, perdagangan, dan digital, serta melibatkan pemerintah dan pelaku usaha untuk mempercepat keanggotaan Indonesia.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">02</div>
+        <div class="tag">Energi · Detik Finance</div>
+        <div class="card-title"><a href="https://finance.detik.com/foto-bisnis/d-8455874/surat-undangan-konferensi-energi-terbarukan-global-untuk-bahlil" target="_blank">Surat Undangan Konferensi Energi Terbarukan Global untuk Bahlil</a></div>
+        <div class="summary">Sejumlah aktivis dari berbagai lembaga yang tergabung dalam Koalisi masyarakat sipil Indonesia seperti Greenpeace Indonesia, AEER, ICEL, Climate Rangers Jakarta, Solidaritas Perempuan, Satya Bumi dan Yayasan Indonesia Cerah melakukan aksi damai bertajuk 'Fokus Energi Diterbarukan' di Kementerian Energi dan Sumber Daya Mineral (ESDM), Jakarta, Rabu (22/4/2026).</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">03</div>
+        <div class="tag">Energi · Metro TV News</div>
+        <div class="card-title"><a href="https://www.metrotvnews.com/read/K5nCRP4M-struktur-kebijakan-energi-presiden-prabowo-antarkan-indonesia-ke-pengakuan-dunia" target="_blank">Struktur Kebijakan Energi Presiden Prabowo Antarkan Indonesia ke Pengakuan Dunia</a></div>
+        <div class="summary">Sekretaris Bidang Kebijakan Ekonomi DPP Partai Golkar, Abdul Rahman Farisi menilai ketahanan energi Indonesia diperkuat oleh desain kelembagaan di bawah Presiden, Prabowo Subianto, termasuk penunjukan Menteri ESDM, Bahlil Lahadalia dan pembentukan satgas hilirisasi. Integrasi kebijakan juga diperkuat melalui Dewan Energi Nasional. Berdasarkan laporan JPMorgan Asset & Wealth Management, Indonesia dinilai memiliki ketahanan energi tinggi dengan tingkat perlindungan sekitar 77%, didukung sumber daya domestik dan stabilitas pasokan energi.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">04</div>
+        <div class="tag">Energi · Media Indonesia</div>
+        <div class="card-title"><a href="https://mediaindonesia.com/ekonomi/882269/fakta-fakta-penemuan-sumur-gas-raksasa-yang-disebut-bahlil" target="_blank">Fakta-Fakta Penemuan Sumur Gas Raksasa yang Disebut Bahlil</a></div>
+        <div class="summary">Menteri ESDM, Bahlil Lahadalia mengungkap penemuan sumur gas raksasa Geliga-1 di Blok Ganal, Kalimantan Timur dengan potensi sekitar 5 TCF gas dan 300 juta barel kondensat. Sumur ini dioperasikan ENI bersama Sinopec. Penemuan ini memperkuat potensi Cekungan Kutai serta mendukung ketahanan energi nasional. Selain itu, ditemukan juga sumur Gula dengan 2 TCF gas, yang berpotensi meningkatkan produksi hingga 1.000 mmscfd gas dan 90.000 barel kondensat per hari.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">05</div>
+        <div class="tag">Otomotif · Kompas Money</div>
+        <div class="card-title"><a href="https://money.kompas.com/read/2026/04/22/110006526/menkeu-tegaskan-pajak-mobil-listrik-tak-naik-hanya-ubah-skema" target="_blank">Menkeu Tegaskan Pajak Mobil Listrik Tak Naik, Hanya Ubah Skema</a></div>
+        <div class="summary">Menteri Keuangan, Purbaya Yudhi Sadewa menegaskan aturan baru pajak kendaraan listrik tidak menambah beban, melainkan hanya mengubah skema pemungutan. Dalam Permendagri No. 11 Tahun 2026, kendaraan listrik kini menjadi objek PKB dan BBNKB, namun total pajak tetap setara dengan skema sebelumnya. Pemerintah pusat masih membuka ruang insentif, sementara besaran pajak ditentukan pemerintah daerah sehingga bisa berbeda antarwilayah. Kebijakan ini mencerminkan penyesuaian fiskal tanpa meningkatkan beban masyarakat secara keseluruhan.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">06</div>
+        <div class="tag">Otomotif · Republika</div>
+        <div class="card-title"><a href="https://ekonomi.republika.co.id/berita/tdwn00348/gaikindo-nilai-adil-jika-mobil-listrik-juga-kena-pajak" target="_blank">Gaikindo Nilai Adil Jika Mobil Listrik Juga Kena Pajak</a></div>
+        <div class="summary">Sekretaris Umum Gabungan Industri Kendaraan Bermotor Indonesia, Kukuh Kumara menilai skema baru pajak kendaraan listrik sebagai langkah adil karena pengguna EV tetap memanfaatkan infrastruktur jalan. Meski demikian, ia mengakui kebijakan ini berpotensi memengaruhi penjualan. Melalui Permendagri No. 11 Tahun 2026, kendaraan listrik tidak lagi otomatis bebas PKB dan BBNKB, namun insentif tetap dapat diberikan oleh pemerintah daerah. Industri menilai keseimbangan antara penerimaan daerah dan daya beli masyarakat menjadi kunci keberhasilan kebijakan ini.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">07</div>
+        <div class="tag">Otomotif · Kumparan</div>
+        <div class="card-title"><a href="https://kumparan.com/kumparanbisnis/kemenperin-harap-pajak-kendaraan-listrik-tak-ganggu-penjualan-dan-produksi-27G1P8Pbe85" target="_blank">Kemenperin Harap Pajak Kendaraan Listrik Tak Ganggu Penjualan dan Produksi</a></div>
+        <div class="summary">Dirjen Ilmate Kemenperin, Setia Diarta berharap kebijakan pajak kendaraan listrik dalam Permendagri No. 11 Tahun 2026 tidak berdampak signifikan pada penjualan dan produksi EV. Ia mengakui adanya potensi kenaikan biaya kepemilikan, namun optimistis target adopsi tetap tercapai, didukung kenaikan harga BBM. Pemerintah daerah masih dapat memberi insentif, sehingga beban pajak tidak selalu penuh. Sementara itu, Menteri Keuangan, Purbaya Yudhi Sadewa menegaskan perubahan hanya pada skema pemungutan, bukan total pajak.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">08</div>
+        <div class="tag">PLN · iNews</div>
+        <div class="card-title"><a href="https://www.inews.id/amp/finance/bisnis/turunkanan-angka-kematian-ibu-pln-salurkan-alat-deteksi-dini-preeklamsia" target="_blank">Turunkan Angka Kematian Ibu, PLN Salurkan Alat Deteksi Dini Preeklamsia</a></div>
+        <div class="summary">PT PLN (Persero) melalui program TJSL menyalurkan alat deteksi dini preeklamsia berbasis IoMT dan AI ke Dinas Kesehatan Kabupaten Garut untuk meningkatkan layanan kesehatan ibu hamil. Menteri Kesehatan, Budi Gunadi Sadikin menargetkan penurunan angka kematian ibu dari 140 menjadi 40 per 100.000 kelahiran dalam lima tahun. Dukungan ini diapresiasi Dinas Kesehatan Garut sebagai langkah penting memperluas akses deteksi dini dan memperkuat upaya penurunan AKI di daerah.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">09</div>
+        <div class="tag">PLN · iNews</div>
+        <div class="card-title"><a href="https://www.inews.id/finance/bisnis/pemprov-dki-jakarta-apresiasi-pln-infrastruktur-ev-di-ibu-kota-makin-lengkap" target="_blank">Pemprov DKI Jakarta Apresiasi PLN, Infrastruktur EV di Ibu Kota Makin Lengkap</a></div>
+        <div class="summary">PT PLN (Persero) memperkuat ekosistem kendaraan listrik dengan menghadirkan SPKLU Center ke-4 di Jakarta, tepatnya di Sakura Garden City, Jakarta Timur. Fasilitas ini dilengkapi 6 unit charger dengan total 10 konektor, termasuk ultra fast charging hingga 200 kW. Direktur Utama PLN, Darmawan Prasodjo menyebut langkah ini untuk meningkatkan kenyamanan pengguna EV. Pemprov DKI Jakarta turut mendukung sebagai bagian dari upaya menurunkan emisi dan mempercepat transisi energi bersih.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">10</div>
+        <div class="tag">Energi · Bisnis Indonesia</div>
+        <div class="card-title"><a href="https://ima.ebdesk.com/cdnclip/printed-news/BISNIS_INDONESIA/2026/04/23/crop/page/13/8091f8-bisnisindonesia20260423-kamis_page-0013/0/MOMENTUM%20AKSELERASI%20TRANSISI%20ENERGI=1=13=1.jpg" target="_blank">Momentum Akselerasi Transisi Energi</a></div>
+        <div class="summary">Penyesuaian harga BBM nonsubsidi pada April 2026 dinilai menjadi momentum penting mempercepat transisi energi menuju energi baru terbarukan (EBT). Ketergantungan tinggi terhadap impor, seperti konsumsi minyak 1,6 juta barel per hari berbanding produksi 600 ribu barel, menunjukkan kerentanan struktural energi nasional. Potensi EBT Indonesia yang mencapai ribuan gigawatt belum dimanfaatkan optimal, dengan kapasitas terpasang masih terbatas. Kenaikan harga BBM mendorong peralihan ke kendaraan listrik dan transportasi publik. Namun, keberhasilan transisi sangat bergantung pada konsistensi kebijakan, insentif, serta percepatan pembangunan infrastruktur pendukung energi bersih.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ MEDIA SOSIAL ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">📱</div>
+      <div class="section-title">Media Sosial</div>
+      <div class="section-count">10 Unggahan</div>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="num-row">01</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXazEWYEolg" target="_blank">Laporan Ekonomi Indonesia di Tengah Geopolitik Global</a></div>
+        <div class="summary">Ketua Dewan Ekonomi Nasional (DEN), Luhut Binsar Pandjaitan, melaporkan kondisi perekonomian Indonesia kepada Presiden Prabowo Subianto di tengah ketidakpastian geopolitik global. Luhut menjelaskan bahwa berdasarkan simulasi DEN, ekonomi Indonesia masih terjaga dalam tiga bulan ke depan. Namun, pemerintah tetap menyiapkan berbagai skenario kebijakan untuk mengantisipasi risiko, seperti lonjakan harga energi dan gangguan rantai pasok. Ia juga menekankan pentingnya efisiensi APBN, deregulasi, transformasi digital (GovTech), serta pengembangan Indonesia Financial Center guna menjaga stabilitas dan mendorong pertumbuhan ekonomi.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">02</div>
+        <div class="tag tag-tiktok">TikTok</div>
+        <div class="card-title"><a href="https://www.tiktok.com/@kumparan/video/7631428744355253511" target="_blank">Presiden AS Perpanjang Gencatan Senjata dengan Iran</a></div>
+        <div class="summary">Presiden Amerika Serikat Donald Trump memperpanjang gencatan senjata dengan Iran untuk memberi waktu bagi Teheran menyusun proposal negosiasi. Meski begitu, Amerika Serikat tetap melanjutkan blokade terhadap pelabuhan Iran. Situasi keamanan di Islamabad diperketat menjelang kemungkinan lanjutan perundingan. Iran juga memperingatkan akan menyerang fasilitas minyak negara Teluk jika wilayah mereka digunakan untuk menyerang Iran setelah gencatan senjata berakhir.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">03</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXaus98iiLb" target="_blank">Presiden Dorong Percepatan Program PLTS 100 Gigawatt</a></div>
+        <div class="summary">Presiden Prabowo Subianto meminta percepatan pembangunan PLTS skala besar sebagai bagian dari upaya mengurangi ketergantungan pada pembangkit diesel. Menteri Pendidikan Tinggi, Sains, dan Teknologi Brian Yuliarto menyampaikan bahwa pemerintah telah mengevaluasi sejumlah program strategis, termasuk PLTS 100 gigawatt. Ia mengatakan Presiden menekankan agar pelaksanaan program dipercepat di berbagai wilayah untuk mendukung transisi energi bersih nasional.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">04</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXbQ5QhD1pl" target="_blank">Bank Indonesia Pertahankan BI-Rate 4,75 Persen</a></div>
+        <div class="summary">Rapat Dewan Gubernur Bank Indonesia pada 21–22 April 2026 memutuskan mempertahankan BI-Rate di level 4,75 persen. Suku bunga deposit facility tetap 3,75 persen dan lending facility 5,50 persen. Gubernur BI Perry Warjiyo menyampaikan keputusan ini sejalan dengan konsensus pasar, karena seluruh responden sebelumnya juga memperkirakan suku bunga acuan akan tetap dipertahankan pada pertemuan kali ini.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">05</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXab39NklDB" target="_blank">Pemerintah Dorong Pabrik Bioetanol Baru di Lampung</a></div>
+        <div class="summary">Pemerintah bersama Pertamina New & Renewable Energy dan Toyota Tsusho akan membangun pabrik bioetanol baru di Lampung. Proyek ini ditargetkan mulai konstruksi pada 2026 dan beroperasi bertahap pada kuartal III–IV. Pengembangan difokuskan pada teknologi generasi kedua berbasis multi-feedstock dengan bahan baku tebu, jagung, dan sorgum. Program ini mendukung mandatori pencampuran bioetanol dan mengurangi ketergantungan impor BBM.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">06</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXbHkDGDLdl" target="_blank">Pemerintah Percepat Pengolahan Sampah Menjadi Energi Listrik</a></div>
+        <div class="summary">Pemerintah mempercepat program Pengolahan Sampah menjadi Energi Listrik sebagai jawaban atas krisis pengelolaan sampah nasional. Targetnya, seluruh sampah dapat terkelola pada 2029 melalui pendekatan terintegrasi berbasis wilayah dan teknologi ramah lingkungan. Dukungan regulasi, insentif, jaminan tarif listrik, dan kemudahan perizinan disiapkan untuk mendorong investasi. Program ini juga diarahkan untuk memperkuat ekonomi sirkular dan pembangunan rendah karbon.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">07</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXawb8UCdUa" target="_blank">Toyota Indonesia Perkuat Investasi Baterai Kendaraan Listrik</a></div>
+        <div class="summary">PT Toyota Motor Manufacturing Indonesia berinvestasi Rp1,3 triliun untuk pengembangan teknologi baterai kendaraan elektrifikasi bersama CATL. Kerja sama ini mencakup hybrid electric vehicle dan battery electric vehicle dengan tingkat komponen dalam negeri yang tinggi. Investasi tersebut mendukung produksi sel dan modul baterai di pabrik CATL Indonesia Karawang. Kolaborasi ini dinilai memperkuat fondasi ekosistem kendaraan listrik nasional dan mendorong industri otomotif berkelanjutan.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">08</div>
+        <div class="tag tag-tiktok">TikTok</div>
+        <div class="card-title"><a href="https://www.tiktok.com/@nusabanuatv/video/7631117416843496724" target="_blank">Pemerintah Siapkan Kembali Subsidi Motor Listrik</a></div>
+        <div class="summary">Pemerintah berencana menghidupkan kembali program subsidi motor listrik tahun ini. Skema tersebut disebut sebagai dukungan terhadap dorongan Presiden Prabowo Subianto untuk memperluas penggunaan kendaraan listrik. Besaran subsidi direncanakan mencapai Rp10 juta per unit, meski waktu penerapan dan kuota belum dijelaskan. Sebelumnya, subsidi motor listrik pernah berjalan melalui Sisapira dan disalurkan kepada masyarakat dengan syarat administrasi tertentu.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">09</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXbhGrak9Dm" target="_blank">Kementerian Koperasi dan PLN Perkuat Layanan Energi Desa</a></div>
+        <div class="summary">Kementerian Koperasi bersama PT PLN membahas penguatan kerja sama melalui Koperasi Desa/Kelurahan Merah Putih. Lebih dari 2.000 koperasi telah dijangkau untuk mendukung integrasi layanan kelistrikan desa, termasuk penjualan token listrik. PLN juga tengah mengembangkan kapal listrik untuk penyeberangan antarpulau di wilayah seperti Nusa Penida dan Gili Trawangan. Inisiatif ini membuka peluang usaha dan memperluas peran koperasi di sektor energi.</div>
+      </div>
+
+      <div class="card">
+        <div class="num-row">10</div>
+        <div class="tag tag-instagram">Instagram</div>
+        <div class="card-title"><a href="https://www.instagram.com/p/DXbnFn0kmr8" target="_blank">PLN Perluas Elektrifikasi ke Sektor Pertambangan</a></div>
+        <div class="summary">PLN memperluas kerja sama elektrifikasi dengan sejumlah perusahaan tambang untuk mendorong penggunaan listrik hijau di sektor pertambangan. Kolaborasi ini diarahkan untuk menekan emisi, meningkatkan efisiensi operasional, dan mendukung target Net Zero Emissions 2060. Pengalihan alat berat dari diesel ke listrik disebut dapat menghemat biaya hingga Rp2 miliar per unit per tahun. Skema ini juga mencakup pengelolaan aset kelistrikan dan infrastruktur pendukung di area tambang.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ KEY TAKEAWAYS ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">⚡</div>
+      <div class="section-title">Key Takeaways</div>
+      <div class="section-count">5 Poin Utama untuk PT PLN</div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-num">1</div>
+      <div>
+        <div class="takeaway-title">Geopolitik Global dan Antisipasi Ketahanan Energi Nasional</div>
+        <div class="takeaway-body">Ketidakpastian geopolitik global mendorong pemerintah menyiapkan berbagai skenario kebijakan untuk menjaga stabilitas ekonomi dan energi, termasuk pengendalian defisit dan antisipasi lonjakan harga energi. Gencatan senjata AS–Iran belum sepenuhnya meredakan risiko, sementara gangguan pasokan tetap menjadi ancaman. Kondisi ini menegaskan pentingnya strategi mitigasi risiko energi melalui diversifikasi sumber, penguatan pasokan domestik, dan kebijakan fiskal adaptif.</div>
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-num">2</div>
+      <div>
+        <div class="takeaway-title">Akselerasi Transisi Energi dan Penguatan EBT Nasional</div>
+        <div class="takeaway-body">Kenaikan harga BBM nonsubsidi menjadi momentum percepatan transisi menuju energi baru terbarukan, diperkuat program strategis seperti pembangunan PLTS 100 gigawatt dan pengembangan bioetanol. Pemerintah juga mendorong investasi dan regulasi pendukung, termasuk pengolahan sampah menjadi energi listrik. Namun, optimalisasi potensi EBT masih menghadapi tantangan implementasi, infrastruktur, serta konsistensi kebijakan untuk mencapai kemandirian energi nasional.</div>
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-num">3</div>
+      <div>
+        <div class="takeaway-title">Dinamika Kebijakan EV dan Dampaknya terhadap Adopsi Pasar</div>
+        <div class="takeaway-body">Perubahan skema pajak kendaraan listrik tanpa penambahan beban mencerminkan penyesuaian fiskal, namun tetap menimbulkan kekhawatiran terhadap daya tarik pasar. Industri menilai keseimbangan antara insentif dan penerimaan daerah menjadi kunci. Di sisi lain, investasi baterai dan rencana subsidi motor listrik menunjukkan komitmen pemerintah menjaga pertumbuhan ekosistem EV meski di tengah perubahan kebijakan.</div>
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-num">4</div>
+      <div>
+        <div class="takeaway-title">Penguatan Ekosistem Energi dan Infrastruktur Listrik Nasional</div>
+        <div class="takeaway-body">Pengembangan SPKLU, elektrifikasi sektor pertambangan, serta perluasan layanan listrik hingga desa menunjukkan penguatan ekosistem kelistrikan nasional. Kolaborasi lintas sektor, termasuk dengan koperasi dan industri, mendorong efisiensi energi dan perluasan akses. Inisiatif ini juga memperkuat peran listrik sebagai tulang punggung transisi energi sekaligus mendukung pertumbuhan ekonomi berbasis elektrifikasi di berbagai sektor.</div>
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-num">5</div>
+      <div>
+        <div class="takeaway-title">Peluang Investasi dan Kolaborasi dalam Transformasi Energi</div>
+        <div class="takeaway-body">Masuknya Indonesia dalam proses aksesi OECD, investasi industri baterai, serta kolaborasi bioenergi dan dekarbonisasi menunjukkan meningkatnya peluang investasi di sektor energi dan industri hijau. Dukungan pembiayaan, teknologi, dan kemitraan global menjadi faktor penting dalam percepatan transformasi. Tren ini menandakan bahwa transisi energi tidak hanya menjadi agenda lingkungan, tetapi juga peluang strategis untuk pertumbuhan ekonomi berkelanjutan.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════ BOTTOM ROW ═══════════════ -->
+  <div class="bottom-row">
+
+    <!-- GOOGLE TRENDS -->
+    <div class="trends-card">
+      <div class="section-header" style="margin-bottom: 16px;">
+        <div class="section-icon icon-teal">🔍</div>
+        <div class="section-title">Google Trends</div>
+        <div class="section-count">Indonesia · 23 Apr</div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-rank">#1</div>
+        <div class="trend-inner">
+          <div class="trend-keyword">Burnley vs Man City</div>
+          <div class="trend-bar-bg"><div class="trend-bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="trend-volume">200K+</div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-rank">#2</div>
+        <div class="trend-inner">
+          <div class="trend-keyword">Barcelona vs Celta</div>
+          <div class="trend-bar-bg"><div class="trend-bar-fill" style="width:50%"></div></div>
+        </div>
+        <div class="trend-volume">100K+</div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-rank">#3</div>
+        <div class="trend-inner">
+          <div class="trend-keyword">Al-Nassr vs Al Ahli</div>
+          <div class="trend-bar-bg"><div class="trend-bar-fill" style="width:50%"></div></div>
+        </div>
+        <div class="trend-volume">100K+</div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-rank">#4</div>
+        <div class="trend-inner">
+          <div class="trend-keyword">Persis vs Bhayangkara FC</div>
+          <div class="trend-bar-bg"><div class="trend-bar-fill" style="width:25%"></div></div>
+        </div>
+        <div class="trend-volume">50K+</div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-rank">#5</div>
+        <div class="trend-inner">
+          <div class="trend-keyword">Piala AFC</div>
+          <div class="trend-bar-bg"><div class="trend-bar-fill" style="width:10%"></div></div>
+        </div>
+        <div class="trend-volume">20K+</div>
+      </div>
+    </div>
+
+    <!-- VIRAL TODAY -->
+    <div class="viral-card">
+      <div class="section-header" style="margin-bottom: 16px;">
+        <div class="section-icon icon-red">🔥</div>
+        <div class="section-title">Viral Today</div>
+        <div class="section-count">5 Konten</div>
+      </div>
+
+      <div class="viral-item">
+        <div class="tag tag-red" style="margin-bottom:6px;">🔥 Viral</div>
+        <div class="viral-title"><a href="https://www.tiktok.com/@metropolitan.id/video/7631440446559898901" target="_blank">Gubernur Kaltim Disorot dalam Aksi Massa</a></div>
+        <div class="viral-desc">Ribuan mahasiswa dan warga menggelar aksi unjuk rasa di Kalimantan Timur sebagai respons terhadap kebijakan pemerintah daerah. Massa menyoroti rencana anggaran renovasi rumah dinas gubernur sebesar Rp25 miliar serta pengadaan mobil dinas gubernur dan DPRD. Aksi ini dipicu penilaian bahwa kebijakan tersebut tidak berpihak pada kepentingan publik.</div>
+      </div>
+
+      <div class="viral-item">
+        <div class="tag tag-red" style="margin-bottom:6px;">🔥 Viral</div>
+        <div class="viral-title"><a href="https://www.facebook.com/100064690628073/posts/pfbid0TZj7kjcLWkUTmVy8wncu7SFXX81c4MbU5JsXefyZAhRtF13rrbdAgLPvTzUqymHil" target="_blank">Pemerintah Kaji PPN atas Jasa Jalan Tol</a></div>
+        <div class="viral-desc">Pemerintah berencana memungut PPN atas jasa jalan tol melalui aturan yang ditargetkan selesai pada 2028. Direktorat Jenderal Pajak menyebut saat ini belum ada ketentuan yang mengubah perlakuan perpajakan kepada masyarakat. Wacana ini menjadi bagian dari upaya memperluas basis pajak secara proporsional dan menjaga keberlanjutan fiskal. Pemerintah menegaskan kebijakan baru akan dikaji lintas kementerian serta memperhatikan daya beli masyarakat.</div>
+      </div>
+
+      <div class="viral-item">
+        <div class="tag tag-red" style="margin-bottom:6px;">🔥 Viral</div>
+        <div class="viral-title"><a href="https://www.instagram.com/reel/DXalnk9E01C/" target="_blank">Pemerintah Sahkan UU Perlindungan Pekerja Rumah Tangga</a></div>
+        <div class="viral-desc">Pemerintah bersama DPR mengesahkan UU Perlindungan Pekerja Rumah Tangga untuk memberikan kepastian hukum serta perlindungan bagi pekerja dan pemberi kerja. Aturan ini mengatur hak dasar seperti upah layak, jam kerja, cuti, hingga jaminan sosial. Selain itu, istilah pekerja rumah tangga dan pemberi kerja digunakan untuk menggantikan istilah sebelumnya, guna menciptakan hubungan kerja yang lebih setara.</div>
+      </div>
+
+      <div class="viral-item">
+        <div class="tag tag-red" style="margin-bottom:6px;">🔥 Viral</div>
+        <div class="viral-title"><a href="https://www.tiktok.com/@officialinews/video/7631264091524418836" target="_blank">Menteri Kesehatan Terapkan Label Gula Minuman Siap Saji</a></div>
+        <div class="viral-desc">Menteri Kesehatan menetapkan kebijakan label Nutri-Level pada minuman siap saji untuk menunjukkan kandungan gula, garam, dan lemak. Skala A hingga D digunakan sebagai indikator kadar GGL, dengan level tertinggi menunjukkan kandungan paling besar. Kebijakan ini bertujuan meningkatkan kesadaran masyarakat terhadap risiko penyakit tidak menular akibat konsumsi berlebih.</div>
+      </div>
+
+      <div class="viral-item">
+        <div class="tag tag-red" style="margin-bottom:6px;">🔥 Viral</div>
+        <div class="viral-title"><a href="https://x.com/insidefolkative/status/2046841272913338764" target="_blank">Menlu Bahas Kerja Sama Budaya dengan Korea Selatan</a></div>
+        <div class="viral-desc">Menteri Luar Negeri Sugiono menyampaikan bahwa Presiden Prabowo dan Presiden Korea Selatan Lee Jae Myung membahas kerja sama budaya, termasuk peluang menambah konser K-Pop di Indonesia. Pemerintah menilai kunjungan luar negeri diarahkan untuk menghasilkan kerja sama yang berdampak langsung bagi masyarakat. Sugiono juga menyebut adanya perhatian terhadap keterlibatan warga Indonesia dalam industri K-Pop di Korea Selatan.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>©️ PT PLN (Persero)</span> — Media &amp; Social Media Brief &nbsp;|&nbsp; 23 April 2026
+  </div>
+
+</div>
+</body>
+</html>
